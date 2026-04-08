@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superior Browser MCP</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      background: #16213e;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #666;
+    }
+
+    .status-dot.connected {
+      background: #4caf50;
+      box-shadow: 0 0 8px #4caf50;
+    }
+
+    .status-dot.connecting {
+      background: #ff9800;
+      animation: pulse 1s infinite;
+    }
+
+    .status-dot.disconnected {
+      background: #f44336;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .status-text {
+      font-size: 13px;
+    }
+
+    .connection-info {
+      font-size: 11px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-connect {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-connect:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-disconnect {
+      background: #333;
+      color: #eee;
+    }
+
+    .btn-disconnect:hover {
+      background: #444;
+    }
+
+    .features {
+      background: #16213e;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .features h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .feature-list {
+      list-style: none;
+      font-size: 12px;
+    }
+
+    .feature-list li {
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+    }
+
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">S</div>
+    <div>
+      <div class="title">Superior Browser MCP</div>
+      <div class="subtitle">v1.0.0 - Browser Automation</div>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="status-dot" id="statusDot"></div>
+    <div>
+      <div class="status-text" id="statusText">Checking connection...</div>
+      <div class="connection-info" id="connectionInfo">ws://localhost:5555</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn-connect" id="connectBtn">Connect</button>
+    <button class="btn-disconnect" id="disconnectBtn">Disconnect</button>
+  </div>
+
+  <div class="features">
+    <h3>Enhanced Features</h3>
+    <ul class="feature-list">
+      <li>Visual element overlays</li>
+      <li>Smart form detection</li>
+      <li>Ad & popup detection</li>
+      <li>Accessibility tree</li>
+      <li>Self-healing selectors</li>
+      <li>Cookie & storage management</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <a href="https://github.com/superior-browser-mcp" target="_blank">Documentation</a> • 
+    <a href="https://github.com/superior-browser-mcp/issues" target="_blank">Report Issue</a>
+  </div>
+
+  <script src="src/popup.js"></script>
+</body>
+</html>

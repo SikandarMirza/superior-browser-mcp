@@ -3,7 +3,7 @@
   "mcp": {
     "superior-browser": {
       "type": "local",
-      "command": ["npx", "-y", "@superior/browser-mcp@latest"],
+      "command": ["node", "F:\\Need For Speed The Run\\superior-browser-mcp\\server\\cli.js"],
       "enabled": true
     }
   }
